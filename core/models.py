@@ -28,8 +28,8 @@ class Servico(Base):
         verbose_name = 'Serviço'
         verbose_name_plural = 'Serviços'
 
-        def __str__(self):
-            return self.servico
+    def __str__(self):
+        return self.servico
 
 
 class Cargo(Base):
@@ -77,5 +77,5 @@ class Feature(Base):
         verbose_name = 'Feature'
         verbose_name_plural = 'Features'
 
-        def __str__(self):
-            return self.feature
+    def __str__(self):
+        return self.feature
