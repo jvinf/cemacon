@@ -9,6 +9,23 @@ class Base(models.Model):
     class Meta:
         abstract=True
 
+class Produto(Base):
+    produto = models.CharField('Produto', max_length=100)
+    descricao = models.CharField('Descrição', max_length=200, null=True)
+    marca = models.CharField('Marca', max_length=100)
+    fornecedor = models.CharField('Fornecedor', max_length=100)
+    precocusto = models.DecimalField('Preço de custo', max_digits=8, decimal_places=2)
+    precovenda = models.DecimalField('Preço de venda', max_digits=8, decimal_places=2)
+    precopromo = models.DecimalField('Preço de promoção', max_digits=8, decimal_places=2)
+    promocao = models.BooleanField('Promoção?', default=False)
+    imagem = StdImageField('Imagem', upload_to='produto', variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
+
+    class Meta:
+        verbose_name = 'Produto'
+        verbose_name_plural = 'Produtos'
+
+    def __str__(self):
+        return self.produto
 
 class Servico(Base):
     ICONE_CHOICES = (

@@ -10,85 +10,31 @@
   </div>
 </div>	
         <div class="row">
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url({% static 'images/assentaforte.jpg' %});"></div>
-                    </div>
-                    <div class="text pt-3 text-center">
-                        <h3>Assenta Forte</h3>
-                        <span class="position mb-2">Argamassas e rejuntes</span>
-                        <div class="faded">
-                            <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-                            <ul class="ftco-social text-center">
+            {% for p in produtos %}
                 
-                <li class="ftco-animate"><a href="https://www.facebook.com/Assentaforte"><span class="icon-facebook">199,90</span></a></li>
-                <li class="ftco-animate"><a href="http://www.assentaforte.com.br"><span class="icon-home"></span></a></li>
-                
-              </ul>
-          </div>
+                    <a href="#">
+                    <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="staff">
+                            <div  class="img-wrap d-flex align-items-stretch">
+                                <div  class="img align-self-stretch" style="background-image: url({{ p.imagem.thumb.url }});"></div>
+                            </div>
+                                <div class="text pt-3 text-center">
+                                    <h3>{{ p.produto }}</h3>
+                                    <span class="position mb-2">{{ p.marca }}</span>
+                    </a>
+                                    <div class="faded">
+                                        <ul class="ftco-social text-center">
+                                        <li class=""><span><s>R$ {{ p.precovenda }}</s></span></li>
+                                        <li class=""><span>R$ {{ p.precopromo }}</span></li>
+                    
+                        
+                                    </ul>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url({% static 'images/reinil.jpg' %});"></div>
-                    </div>
-                    <div class="text pt-3 text-center">
-                        <h3>Reinil</h3>
-                        <span class="position mb-2">Tintas</span>
-                        <div class="faded">
-                            <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-                            <ul class="ftco-social text-center">
-                
-                <li class="ftco-animate"><a href="https://www.facebook.com/duarte.reinil/"><span class="icon-facebook"></span></a></li>
-                
-              </ul>
-          </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url({% static 'images/team-3.jpg' %});"></div>
-                    </div>
-                    <div class="text pt-3 text-center">
-                        <h3>Eva Gustavo</h3>
-                        <span class="position mb-2">Engineer</span>
-                        <div class="faded">
-                            <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-                            <ul class="ftco-social text-center">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-          </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url({% static 'images/team-4.jpg' %});"></div>
-                    </div>
-                    <div class="text pt-3 text-center">
-                        <h3>Mike Henderson</h3>
-                        <span class="position mb-2">Architect</span>
-                        <div class="faded">
-                            <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-                            <ul class="ftco-social text-center">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-          </div>
-                    </div>
-                </div>
-            </div>
+            
+            {% endfor %}
         </div>
     </div>
 </section>

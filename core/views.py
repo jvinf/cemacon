@@ -1,7 +1,7 @@
 from django.views.generic import FormView
 from django.urls import reverse_lazy
 from django.contrib import messages
-from .models import Servico, Funcionario, Feature
+from .models import Servico, Funcionario, Feature, Produto
 from .forms import ContatoForm
 
 class IndexView(FormView):
@@ -14,6 +14,7 @@ class IndexView(FormView):
         context['servicos'] = Servico.objects.order_by('?').all()
         context['funcionarios'] = Funcionario.objects.order_by('?').all()
         context['features'] = Feature.objects.order_by('?').all()
+        context['produtos'] = Produto.objects.order_by('?').all()
         return context
 
     def form_valid(self, form, *args, **kwargs):
